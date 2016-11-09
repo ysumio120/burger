@@ -1,0 +1,32 @@
+<div class="container">
+<div class="row">
+	<ol class="notdevoured col-lg-6 text-center">
+		<h3>Burgers to Eat</h3>
+	  {{#each burgers}}
+	  	{{#unless this.devoured}}
+	  	<li>
+	  	   <div>{{this.burger_name}}</div>
+	  	   <button class="devour btn btn-default" data-name="{{this.burger_name}}">Devour it!</button>
+	  	</li>
+	  	{{/unless}}
+	  {{/each}}
+	</ol>
+
+	<ol class="devoured col-lg-6 text-center">
+		<h3>Burgers Devoured</h3>
+	  {{#each burgers}}
+	  	{{#if this.devoured}}
+	  	<li>
+	  	   <div>{{this.burger_name}}</div>
+	  	</li>
+	  	{{/if}}
+	  {{/each}}
+	</ol>
+</div>
+	<div>
+		<form class="col-lg-6 col-lg-offset-3 text-center">
+			<input id="newBurger" placeholder="Burger Name">
+			<button id="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>

@@ -32,15 +32,15 @@ var orm = {
 		});
 	},
 	insertOne: function(table, cols, vals, callback) {
-		var query = "INSERT INTO " + table + "(" + cols + ") VALUES (" +  printQuestionMarks(vals.length) + ")";
+		var query = "INSERT INTO " + table + "(" + cols.toString() + ") VALUES (" +  printQuestionMarks(vals.length) + ")";
 		connection.query(query, vals, function(err, result) {
-			callback(results);
+			callback(result);
 		})
 	},
 	updateOne: function(table, colVals, condition, callback) {
-		var query = "UPDATE " + table + " SET " + objToSql(objColVals) + " WHERE " + condition;
-		connection.query(query, vals, function(err, result) {
-			callback(results);
+		var query = "UPDATE " + table + " SET " + objToSql(colVals) + " WHERE " + condition;
+		connection.query(query, function(err, result) {
+			callback(result);
 		})
 	}
 }
