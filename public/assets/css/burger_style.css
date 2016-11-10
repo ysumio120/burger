@@ -1,3 +1,7 @@
+body {
+	background-color: rgba(143,156,0,0.5);
+}
+
 li {
 	margin: 7px 0px;
 }
@@ -13,4 +17,8 @@ li > div {
 
 .devoured div {
 	width: 100%;
+}
+
+img {
+	width: 70px;
 }
